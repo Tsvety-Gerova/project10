@@ -7,15 +7,13 @@ public class FanTest {
 
 		Fan fan1 = new Fan();
 			fan1.setRadius(10);
-			fan1.setSpeed(3);
+			fan1.setSpeed(Fan.FAST);
 			fan1.setColor("yellow");
-			fan1.setMode(true);
+			fan1.setSwitchedOn(true);
 			
 		Fan fan2 = new Fan();
-			fan2.setRadius(5);
-			fan2.setSpeed(2);
-			fan2.setColor("blue");
-			fan2.setMode(false);
+			fan2.setSpeed(Fan.MEDIUM);
+			
 		
 		
 			System.out.println(fan1.toString());

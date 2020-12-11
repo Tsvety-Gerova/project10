@@ -7,60 +7,58 @@ public class regularPolygon {
 	private double x = 0; // x-koordinata na centura
 	private double y = 0; // y-koordinatata na centura
 	
-	public void setN(int n) {
-		this.n = n;
+	regularPolygon() {}
+
+	regularPolygon (int aN, double aSideLength){
+		setN(aN);
+		setSideLength(aSideLength);
+	}
+	
+	regularPolygon(int aN, double aSideLength, double x, double y){
+		setN(aN);
+		setSideLength(aSideLength);
+		setX(x);
+		setY(y);
 	}
 	public int getN() {
 		return n;
 	}
-	
-	public void setSideLength(double sideLength) {
-		this.sideLength = sideLength;
+
+	public void setN(int n) {
+		this.n = n;
 	}
+
 	public double getSideLength() {
 		return sideLength;
 	}
-	
-	public void setX(double x) {
-		this.x = x;
+
+	public void setSideLength(double sideLength) {
+		this.sideLength = sideLength;
 	}
+
 	public double getX() {
 		return x;
 	}
-	
-	public void setY(double y) {
-		this.y = y;
+
+	public void setX(double x) {
+		this.x = x;
 	}
+
 	public double getY() {
 		return y;
 	}
-	
-	public double getPerimeter(int n, double sideLength) {
-		this.n = n;
-		this.sideLength = sideLength;
+
+	public void setY(double y) {
+		this.y = y;
+	}
+
+	public double getPerimeter() {
 		return n*sideLength;
 	}
 	
-	public double getArea(int n, double sideLength) {
-		this.n = n;
-		this.sideLength = sideLength;
+	public double getArea() {
 		return (n*sideLength*sideLength)/(4.0*Math.tan(Math.PI/n));
 	}
 	
-	regularPolygon(){	
-	}
 	
-	regularPolygon(int n, double sideLength){
-		this.n = n;
-		this.sideLength = sideLength;
-		x = 0;
-		y = 0;
-	}
-	
-	regularPolygon(int n, double sideLength, double x, double y){
-		this.n = n;
-		this.sideLength = sideLength;
-		this.x = x;
-		this.y = y;
-	}
 }

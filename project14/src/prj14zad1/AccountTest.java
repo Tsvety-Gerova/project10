@@ -6,12 +6,8 @@ public class AccountTest {
 		// TODO Auto-generated method stub
 
 		
-		Account account = new Account();
+		Account account = new Account(1222,20000);
 		
-		account.setId(1122);
-		account.setBalance(20000);
-		account.setYearInterestRate(4.5);
-				
 		account.withdraw(2500);
 		account.deposit(3000);
 		

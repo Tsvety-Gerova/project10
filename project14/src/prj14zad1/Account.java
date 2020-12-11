@@ -5,21 +5,22 @@ import java.util.Date;
 public class Account {
 
 	private int id = 0;
-	private static double balance = 0;
-	private double yearInterestRate = 0; // godishna lihva
+	public double balance = 0;
+	private static  double yearInterestRate = 4.5; // godishna lihva
 	Date dateCreated = new Date();
 	
 	Account() {
 	}
 	
 	Account(int id, double balance) {
-		this.balance = balance;
-		
+		this.setId(id);
+		this.setBalance(balance);
 	}
 	
 	public void setId(int id) {
 	this.id = id;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -30,33 +31,38 @@ public class Account {
 	public double getBalance() {
 		return balance;
 	}
-	
-	public void setYearInterestRate(double yearInterestRate) {
-		this.yearInterestRate = yearInterestRate;
-	}
-	public double getYearIneterstRate() {
+		
+	public static double getYearInterestRate() {
 		return yearInterestRate;
 	}
+
+	public static void setYearInterestRate(double yrInterestRate) {
+	    yearInterestRate = yrInterestRate;
+	    
+	}
+		
+	public Date getDateCreated() {
+			return dateCreated;
+		}
 	
 	
-	public double getMonthlyInterestRate(double yearInterestRate) {
-		 double monthlyInterestRate = yearInterestRate/12;
-		 return monthlyInterestRate;
+	public static double getMonthlyInterestRate(double yearInterestRate) {
+		 return yearInterestRate/12;
 	}
 	
 	public double getMonthlyInterest(double monthlyInterestRate) {
 		return balance*monthlyInterestRate;
 	}
 	
-	public static double withdraw(double sum) {
-		balance = balance - sum;
-		return balance;
+	public void withdraw(double draw) {
+		balance -= draw;
 	}
 	
-	public double deposit (double sum) {
-		balance = balance + sum;
-		return balance;
+	public void deposit (double sum) {
+		balance += sum;
 	}
+
+	
 	
 	
 	

@@ -2,70 +2,57 @@ package fan;
 
 public class Fan {
 
-	final int SLOW = 1;
-	final int MEDIUM = 2;
-	final int FAST = 3; 
-	String mode;
-	String ifSwitchedOff;
+	public final static int SLOW = 1;
+	public final static int MEDIUM = 2;
+	public final static int FAST = 3; 
 	
-	private int speed = 1;
+	private int speed = SLOW;
 	private boolean switchedOn = false;
 	private double radius = 5;
-	private String color = "blue";
+	private String color = new String("Blue");
 	
-	public void setSpeed (int speed) {
-		this.speed = speed;
-	}
-	public int GetSpeed() {
+	public Fan () {}
+	
+	public int getSpeed() {
 		return speed;
 	}
-	
-	
-	
-	public void setMode (boolean switchedOn) {
-		this.switchedOn = switchedOn;
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
-	public boolean getMode() {
+
+
+	public boolean isSwitchedOn() {
 		return switchedOn;
 	}
-	
-	
-	
+
+	public void setSwitchedOn(boolean switchedOn) {
+		this.switchedOn = switchedOn;
+	}
+
+    public double getRadius() {
+		return radius;
+	}
+
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}
-	public double getRadius() {
-		return radius;
-	}
-	
-	
-	
-	public void setColor(String color) {
-		this.color = color;
-	}
+
 	public String getColor() {
 		return color;
 	}
-	
-	
-	Fan() {		
+
+	public void setColor(String color) {
+		this.color = color;
 	}
+
 	
 	public String toString() {
-		if (switchedOn = true) {
-			ifSwitchedOff  = "true";
-		  if(speed == 1) {
-			mode = "SLOW";
-		}else if(speed == 2) {
-			mode = "MEDIUM";
-		}else if(speed == 3) {
-			mode = "FAST";
-		} 
-
-	}else {
-		ifSwitchedOff = "The fan is off";
+		if (switchedOn) {
+			return "Speed: " + speed + " color: " + color + " radius " + radius;
+		}else {
+			return "Color " + color + " radius " + radius + " The fan is turned off"; 
 		}
-		return mode + " " + color + " " + ifSwitchedOff;
 	}
-	
+		
 }
